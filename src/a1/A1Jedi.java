@@ -54,6 +54,12 @@ public class A1Jedi {
 				if (customers[0].first.contentEquals("Clinton")) {
 					inventory[4].numCustomers -= 2;
 				}
+				if (customers[2].totalProducts == 3) {
+					inventory[1].numCustomers -= 2;
+					inventory[2].numCustomers -= 1;
+					inventory[4].numCustomers -= 2;
+					
+				}
 				scan.close();
 				
 				// loop to list and print
