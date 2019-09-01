@@ -7,11 +7,10 @@ public class Customer {
 	Product[] products;
 	double spent;
 	
-	public Customer(String f, String l, int t, double s) {
+	public Customer(String f, String l, int t) {
 		first = f;
 		last = l;
 		totalProducts = t;
-		spent = s;
 	}
 	
 	
