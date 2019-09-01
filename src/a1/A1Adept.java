@@ -16,12 +16,12 @@ public class A1Adept {
 		
 		// array of products
 		
-		Product[] products = new Product[totalProducts];
+		Product[] inventory = new Product[totalProducts];
 		
 		// putting products and properties into array
 		
-		for (int i=0; i < products.length; i++ ) {
-			products[i] = new Product(scan.next(), scan.nextDouble());
+		for (int i=0; i < inventory.length; i++ ) {
+			inventory[i] = new Product(scan.next(), scan.nextDouble());
 			
 		}
 		
@@ -40,9 +40,9 @@ public class A1Adept {
 			for (int j=0; j < customers[i].totalProducts; j++) {
 				int number = scan.nextInt();
 				String item = scan.next();
-				for (int k=0; k < products.length; k++) {
-					if(item == products[k].name) {
-						double cost = number * products[k].price;
+				for (int k=0; k < inventory.length; k++) {
+					if(item.contentEquals(inventory[k].name)) {
+						double cost = number * inventory[k].price;
 						customers[i].spent += cost;
 					}
 				}
@@ -50,13 +50,40 @@ public class A1Adept {
 		}
 		scan.close();
 		
+		
+		
 		// biggest
-		System.out.println(customers[0].first + customers[0].last);
+		int biggest = 0;
 		
 		for (int i=0; i<customers.length; i++) {
-			String hi = "hi";
+			if(customers[biggest].spent < customers[i].spent) {
+				biggest = i;
+			}
 		}
+		
+		System.out.println("Biggest: " + customers[biggest].first + " " + customers[biggest].last + " (" + String.format("%.2f", customers[biggest].spent) + ")");
 
+		// smallest
+		int smallest = 0;
+				
+		for (int i=0; i<customers.length; i++) {
+			if(customers[smallest].spent > customers[i].spent) {
+						smallest = i;
+			}
+		}
+				
+		System.out.println("Smallest: " + customers[smallest].first + " " + customers[smallest].last + " (" + String.format("%.2f", customers[smallest].spent) + ")");
+		
+		// average
+		Double totalCost = (double) 0;
+		
+		for(int i=0; i<customers.length; i++) {
+			totalCost += customers[i].spent;
+		}
+		
+		Double average = totalCost / customers.length;
+		
+		System.out.println("Average: " + String.format("%.2f", average));
 		
 	}
 }
