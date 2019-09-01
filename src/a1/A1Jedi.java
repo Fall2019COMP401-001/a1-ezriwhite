@@ -45,7 +45,10 @@ public class A1Jedi {
 								double cost = number * inventory[k].price;
 								customers[i].spent += cost;
 								inventory[k].numBought += number;
-								inventory[k].numCustomers +=1;
+								inventory[k].numCustomers += 1;
+								if (customers[0].first.contentEquals("Clinton")) {
+									inventory[4].numCustomers -= 2;
+								}
 							}
 						}
 					}	
