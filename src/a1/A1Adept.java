@@ -35,6 +35,26 @@ public class A1Adept {
 		Customer[] customers = new Customer[totalCustomer];
 		
 		// putting customers into array
+		
+		for (int i=0; i < customers.length; i++ ) {
+			customers[i].first = scan.next();
+			customers[i].last = scan.next();
+			customers[i].totalProducts = scan.nextInt();
+			for (int j=0; j < customers[i].totalProducts; j++) {
+				int number = scan.nextInt();
+				String item = scan.next();
+				for (int k=0; k < products.length; k++) {
+					if(item == products[k].name) {
+						double cost = number * products[k].price;
+						customers[i].spent += cost;
+					}
+				}
+			}
+			
+			
+			// inputting 
+			
+		}
 
 		
 	}
