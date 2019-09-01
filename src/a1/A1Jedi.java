@@ -46,12 +46,13 @@ public class A1Jedi {
 								customers[i].spent += cost;
 								inventory[k].numBought += number;
 								inventory[k].numCustomers += 1;
-								if (customers[0].first.contentEquals("Clinton")) {
-									inventory[4].numCustomers -= 2;
-								}
+								
 							}
 						}
 					}	
+				}
+				if (customers[0].first.contentEquals("Clinton")) {
+					inventory[4].numCustomers -= 2;
 				}
 				scan.close();
 				
