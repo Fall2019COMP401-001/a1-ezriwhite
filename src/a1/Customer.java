@@ -14,11 +14,6 @@ public class Customer {
 		spent = s;
 	}
 	
-	public void getPrice() {
-		for (int i=0; i < totalProducts; i++) {
-			 
-		}
-	}
 	
 
 }

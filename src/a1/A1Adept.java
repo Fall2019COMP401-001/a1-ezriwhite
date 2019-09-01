@@ -49,11 +49,15 @@ public class A1Adept {
 						customers[i].spent += cost;
 					}
 				}
-			}
-			
-			
-			// inputting 
-			
+			}	
+		}
+		scan.close();
+		
+		// biggest
+		System.out.println(customers[0].first + customers[0].last);
+		
+		for (int i=0; i<customers.length; i++) {
+			String hi = "hi";
 		}
 
 		
